@@ -9,6 +9,7 @@ services:
     stdin_open: true
     ports:
       - 3000:3000
+    env_file: ./Cert-fe/.env
     networks:
       - cert-app-network
     # env_file:

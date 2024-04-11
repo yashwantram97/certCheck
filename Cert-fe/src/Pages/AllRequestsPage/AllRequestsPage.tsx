@@ -23,7 +23,9 @@ const AllRequestsPage = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await axios("http://localhost:5000/request-list");
+        const response = await axios(
+          `${import.meta.env.VITE_API_URL}/request-list`
+        );
         dispatch(requestActions.updateAllReq(response.data));
       } catch (err) {
         console.log("@#@# err", err);

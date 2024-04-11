@@ -49,7 +49,7 @@ const CreateRequestPage = () => {
       resBody.issued_on = formatDate(data.issued_on);
       try {
         const response = await axios.post(
-          "http://localhost:5000/request-certificate",
+          `${import.meta.env.VITE_API_URL}/request-certificate`,
           resBody
         );
         if (response.data.responce === "Ok")

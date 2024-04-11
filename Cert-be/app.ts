@@ -1,12 +1,14 @@
 import axios from "axios";
 import express, { Request, Response } from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 const app = express();
 
 const PORT = 5000;
 
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get("/", (request: Request, response: Response) => {
